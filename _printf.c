@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 		{"s", _print_a_string},
 		{NULL, NULL}
 	};
-	int i = 0, j = 0, count = 0, b = 0;
+	int i = 0, j = 0, count = 0, b = 0, c = 0;
 
 	va_start(args, format);
 	b = _validate(format);
@@ -27,8 +27,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			_write(format[i]);
-			count += 1;
+			c = _write(format[i]);
+			count += c;
 		}
 		else
 		{
