@@ -12,7 +12,8 @@ int _print_format(const char *format, va_list args)
 {
 	spc_dt _types[] = {
 		{"c", _print_a_char},
-		{"s", _print_a_string}
+		{"s", _print_a_string},
+		{NULL, NULL}
 	};
 	int count = 0, i = 0, c = 0, j = 0;
 
