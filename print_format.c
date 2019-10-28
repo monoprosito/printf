@@ -20,18 +20,16 @@ int _print_format(const char *format, va_list args)
 	while (format && format[i])
 	{
 		if (format[i] != '%')
-		{
-			_write(format[i]);
-			count += 1;
-		}
+			count += _write(format[i]);
 		else
 		{
 			i++;
-			if (format[i] == '%')
+			while (format[i] == ' ')
 			{
-				_write(format[i]);
-				count += 1;
+				i++;
 			}
+			if (format[i] == '%')
+				count += _write(format[i]);
 			else
 			{
 				while (_types[j].specifier)
