@@ -15,7 +15,7 @@ void _evaluate(const char *str_format)
 	int i = 0, j = 0, flag_a = 0;
 
 	if ((str_format != NULL) && (str_format[i] == '\0'))
-		exit(10);
+		return;
 	while (str_format[i] != '\0')
 	{
 		if (str_format[i] == '%')
@@ -27,7 +27,7 @@ void _evaluate(const char *str_format)
 				j++;
 			}
 			if (flag_a == 0)
-				exit(11);
+				return;
 			flag_a = 0;
 			j = 0;
 		}
