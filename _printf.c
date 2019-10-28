@@ -17,10 +17,12 @@ int _printf(const char *format, ...)
 		{"s", _print_a_string},
 		{NULL, NULL}
 	};
-	int i = 0, j = 0, count = 0;
+	int i = 0, j = 0, count = 0, b = 0;
 
 	va_start(args, format);
-	_evaluate(format);
+	b = _validate(format);
+	if (b == -1)
+		return (b);
 	while (format && format[i])
 	{
 		if (format[i] != '%')

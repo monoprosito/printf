@@ -3,19 +3,20 @@
 #include <stdlib.h>
 
 /**
- * _evaluate - evaluate if each character of the string format is correct
+ * _validate - evaluate if each character of the string format is correct
  * @str_format: character
  *
+ * Return: -1 if error or 0 success
  */
 
 
-void _evaluate(const char *str_format)
+int _validate(const char *str_format)
 {
 	char array_type[2] = {'c', 's'};
 	int i = 0, j = 0, flag_a = 0;
 
 	if ((str_format != NULL) && (str_format[i] == '\0'))
-		return;
+		return (-1);
 	while (str_format[i] != '\0')
 	{
 		if (str_format[i] == '%')
@@ -27,10 +28,11 @@ void _evaluate(const char *str_format)
 				j++;
 			}
 			if (flag_a == 0)
-				return;
+				return (-1);
 			flag_a = 0;
 			j = 0;
 		}
 		i++;
 	}
+return (0);
 }
