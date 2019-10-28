@@ -31,5 +31,14 @@ void _print_a_string(va_list args)
 			i++;
 		}
 	}
+	else
+	{
+		_write('(');
+		_write('n');
+		_write('u');
+		_write('l');
+		_write('l');
+		_write(')');
+	}
 }
 
