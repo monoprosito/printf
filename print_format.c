@@ -21,14 +21,14 @@ int _print_format(const char *format, va_list args)
 	{
 		if (format[i] != '%')
 			count += _write(format[i]);
-		else
+		else if (format[i + 1] != '\0')
 		{
 			i++;
 			while (format[i] == ' ')
 			{
 				i++;
 			}
-			if (format[i] == '%')
+			if (format[i] == '%' || (format[i] != 'c' && format[i] != 's'))
 				count += _write(format[i]);
 			else
 			{
