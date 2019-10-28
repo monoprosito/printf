@@ -27,8 +27,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			c = _write(format[i]);
-			count += c;
+			_write(format[i]);
+			count += 1;
 		}
 		else
 		{
@@ -37,8 +37,8 @@ int _printf(const char *format, ...)
 			{
 				if (*_types[j].specifier == format[i])
 				{
-					_types[j].f(args);
-					count += 1;
+					c = _types[j].f(args);
+					count += c;
 				}
 			j++;
 			}
@@ -46,5 +46,5 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	return (count);
+	return (count - 1);
 }

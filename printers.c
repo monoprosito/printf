@@ -5,11 +5,12 @@
   * _print_a_char - Prints a char
   * @args: A list of variadic arguments
   *
-  * Return: Nothing
+  * Return: The length of the character
   */
-void _print_a_char(va_list args)
+int _print_a_char(va_list args)
 {
 	_write(va_arg(args, int));
+	return (1);
 }
 
 /**
