@@ -16,7 +16,7 @@ typedef struct specifiers
 int _write(char c);
 int _printf(const char *format, ...);
 void _print_a_char(va_list args);
-void _print_a_string(va_list args);
+int _print_a_string(va_list args);
 int _validate(const char *str_format);
 
 #endif /* _HOLBERTON */
