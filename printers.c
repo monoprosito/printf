@@ -16,9 +16,9 @@ void _print_a_char(va_list args)
   * _print_a_string - Prints a string
   * @args: A list of variadic arguments
   *
-  * Return: Nothing
+  * Return: The length of the string
   */
-void _print_a_string(va_list args)
+int _print_a_string(va_list args)
 {
 	char *arg = va_arg(args, char *);
 	int i = 0;
@@ -30,15 +30,16 @@ void _print_a_string(va_list args)
 			_write(arg[i]);
 			i++;
 		}
+
+		return (i);
 	}
-	else
-	{
-		_write('(');
-		_write('n');
-		_write('u');
-		_write('l');
-		_write('l');
-		_write(')');
-	}
+
+	_write('(');
+	_write('n');
+	_write('u');
+	_write('l');
+	_write('l');
+	_write(')');
+	return (6);
 }
 
