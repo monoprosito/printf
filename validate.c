@@ -9,7 +9,7 @@
  */
 
 
-void _evaluate(char *str_format)
+void _evaluate(const char *str_format)
 {
 	char array_type[2] = {'c', 's'};
 	int i = 0, j = 0, flag_a = 0;
@@ -23,12 +23,13 @@ void _evaluate(char *str_format)
 			while (array_type[j])
 			{
 				if (str_format[i + 1] == array_type[j])
-					flag_a == 1;
+					flag_a = 1;
 				j++;
 			}
 			if (flag_a == 0)
-				exit(10);
+				exit(11);
 			flag_a = 0;
+			j = 0;
 		}
 		i++;
 	}
