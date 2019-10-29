@@ -10,7 +10,8 @@
   */
 int _print_format(const char *format, va_list args)
 {
-	int count = 0, i = 0;
+	int count = 0;
+	int i = 0;
 
 	while (format && format[i])
 	{
@@ -27,7 +28,7 @@ int _print_format(const char *format, va_list args)
 			if (format[i] == '%')
 				count += _write(format[i]);
 
-			if (format[i] != 'c' && format[i] != 's' && format[i] != '%')
+			if (_validate_char(format[i]) == 0)
 			{
 				count = _print_invalid_spec(format[i - 1], format[i], count);
 			}
@@ -60,6 +61,8 @@ int _print_spec(char format, va_list args)
 	spc_dt _types[] = {
 		{"c", _print_a_char},
 		{"s", _print_a_string},
+		{"d", _print_a_integer},
+		{"i", _print_a_integer},
 		{NULL, NULL}
 	};
 
@@ -97,4 +100,24 @@ int _print_invalid_spec(char prev_format, char format, int count)
 	}
 
 	return (count);
+}
+
+/**
+  * _validate_char - validate the type
+  * @_type: character to be comparate
+  *
+  * Return: 1 if char is equal to a type
+  */
+int _validate_char(char _type)
+{
+	char _types[] = {'c', 's', 'd', 'i', '%'};
+	int i = 0;
+
+	while (_types[i])
+	{
+		if (_types[i] == _type)
+			return (1);
+		i++;
+	}
+	return (0);
 }
