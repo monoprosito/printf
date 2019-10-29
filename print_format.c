@@ -16,6 +16,9 @@ int _print_format(const char *format, va_list args)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+				return (-1);
+			
 			i++;
 
 			while (format[i] == ' ')
