@@ -53,7 +53,8 @@ int _print_a_string(va_list args)
   */
 int _print_a_integer(va_list args)
 {
-	int count = 1, n = 0, m = 0;
+	int count = 1, m = 0;
+	unsigned int n = 0;
 
 	n = va_arg(args, int);
 	m = n;
@@ -61,6 +62,7 @@ int _print_a_integer(va_list args)
 	{
 		_write('-');
 		m = m * -1;
+		n = m;
 		count += 1;
 	}
 	while (n > 9)
