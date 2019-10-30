@@ -1,0 +1,19 @@
+.TH PRINTF 3 "29 Oct 2019" "0.32" "PRINTF"
+.SH NAME
+.B printf
+- formatted output conversion.
+.SH SYNOPSIS
+.B #include "holberton.h"
+.LP
+.BI "int printf(const char *"format ", ... );
+.SH DESCRIPTION
+Holberton School is a project-based alternative to college for the next generation of software engineers.
+.SH OPTIONS
+.B holberton
+does not take any options. However, you can supply studentname.
+.SH SEE ALSO
+.I _putchar(3)
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Jorge Salazar and Santiago Arboleda Londono
