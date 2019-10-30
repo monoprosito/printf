@@ -79,7 +79,6 @@ int _print_a_integer(va_list args)
   * _recursion_integer - Prints a integer
   * @a: integer to print
   *
-  * Return: count of prints
   */
 void _recursion_integer(int a)
 {
